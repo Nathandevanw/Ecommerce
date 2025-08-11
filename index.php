@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>Question 1</title>
+    <title>Question 2</title>
     <script src='https://www.google.com/recaptcha/api.js' async defer></script>
     <link rel="stylesheet" href="style.css">
     <style>
