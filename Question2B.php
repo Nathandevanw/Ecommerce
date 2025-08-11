@@ -34,7 +34,7 @@
     <section class="card">
       <h1 class="heading"><b>Create Account</b></h1>
 
-      <form id="register-form" action="verify_v3.php" method="post" class="form" novalidate>
+      <form id="register-form" action="Question2B_Process.php" method="post" class="form" novalidate>
         <div>
           <label for="email">Email address:</label><br/>
           <input class="input" type="email" id="email" name="email" required>
