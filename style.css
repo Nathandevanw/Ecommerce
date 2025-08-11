@@ -1,100 +1,65 @@
-
-/* ===== base ===== */
-:root{
-  --blue:#3a8acb;           /* heading + accents */
-  --line:#cfe3f9;           /* light blue lines */
-  --text:#1f2937;           /* gray-800 */
-  --muted:#6b7280;          /* gray-500 */
-  --bg:#f8fafc;             /* page bg */
-  --card:#ffffff;           /* card bg */
-  --radius:10px;
-  --shadow:0 1px 3px rgba(0,0,0,.06);
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9fbfd;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;  /* center horizontally */
+  align-items: center;      /* center vertically */
+  min-height: 100vh;        /* full page height */
 }
 
-*{ box-sizing:border-box; }
-html,body{ height:100%; }
-body{
-  margin:0;
-  background:var(--bg);
-  color:var(--text);
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+.container {
+  background-color: white;
+  padding: 40px 50px;  /* big padding inside box */
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  width: 100%;
 }
 
-/* ===== layout ===== */
-.wrap{
-  max-width: 720px;
-  margin: 48px auto;
-  padding: 0 16px;
-}
-.card{
-  background:var(--card);
-  border:1px solid #e5e7eb;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  padding: 28px 28px 22px;
-}
-
-/* ===== heading like the screenshot ===== */
-.heading{
-  margin: 0 0 18px;
+h1 {
+  margin-bottom: 30px; /* space below title */
+  text-align: center;
   font-size: 28px;
-  letter-spacing:.2px;
-  display:flex;
-  gap: 10px;
-  color: var(--blue);
-  font-weight: 700;
 }
 
-/* ===== form ===== */
-.form{
-  display:grid;
-  gap: 10px;
+.form {
+  display: grid;
+  gap: 20px; /* more space between each section */
 }
-label{
-  font-size: 14px;
-  font-weight: 600;
-  margin-top: 6px;
+
+label {
+  font-size: 15px;
+  font-weight: bold;
 }
-.input{
-  width:100%;
-  padding: 11px 12px;
-  border: 1px solid var(--line);
+
+input {
+  padding: 10px;
+  border: 1px solid #ccc;
   border-radius: 6px;
-  background: #fff;
-  outline: none;
-  transition: box-shadow .15s ease, border-color .15s ease;
 }
-.input:focus{
-  border-color: var(--blue);
-  box-shadow: 0 0 0 3px rgba(58,138,203,.15);
-}
-.hint{
-  margin: 4px 0 0;
+
+.hint {
   font-size: 12px;
-  color: var(--muted);
+  color: #555;
 }
 
-/* recaptcha block spacing */
-.captcha{ margin: 6px 0 8px; }
+.captcha {
+  margin-top: 15px;
+}
 
-/* button styled like simple box in screenshot */
-.btn{
-  width: max-content;
-  padding: 10px 14px;
-  background:#ffffff;
-  color: var(--text);
-  border: 1px solid var(--line);
+button {
+  margin-top: 20px;
+  padding: 12px;
+  border: none;
+  background-color: #007bff;
+  color: white;
   border-radius: 6px;
+  font-size: 16px;
   cursor: pointer;
-  transition: background .15s ease, border-color .15s ease;
-}
-.btn:hover{
-  background:#f3f7ff;
-  border-color: var(--blue);
 }
 
-/* small screens */
-@media (max-width:520px){
-  .card{ padding: 20px 16px; }
-  .heading{ font-size:24px; }
+button:hover {
+  background-color: #0056b3;
 }

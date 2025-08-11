@@ -28,7 +28,7 @@
         <div>
           <label for="password">Password:</label><br/>
           <input type="password" id="password" name="password" minlength="10" required>
-           <p class="hint">Minimum 10 characters. Must include uppercase, lowercase, and number(s).</p>
+           <p class="hint"><str>Minimum 10 characters.<br> Must include uppercase, lowercase, and number(s).</str></p>
         </div>
 
         <div>
