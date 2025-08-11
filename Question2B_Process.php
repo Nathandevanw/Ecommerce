@@ -1,6 +1,6 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $secret = "YOUR_V3_SECRET_KEY";
+    $secret = "6Le4bKIrAAAAABR7a9xfs01j-DGiHdMnSNNYogtf";
     $token  = $_POST['g-recaptcha-response'] ?? '';
 
     // Minimal GET request, same style as your snippet
@@ -23,3 +23,4 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         // Optionally: var_dump($data); // to see 'error-codes', score, etc. during testing
     }
 }
+
