@@ -2,6 +2,7 @@
   <head>
     <title>Question 1</title>
     <script src='https://www.google.com/recaptcha/api.js' async defer></script>
+    <link rel="stylesheet" href="style.css">
     <style>
       .error-message {
         color: red;
@@ -26,7 +27,8 @@
 
         <div>
           <label for="password">Password:</label><br/>
-          <input type="password" id="password" name="password">
+          <input type="password" id="password" name="password" minlength="10" required>
+           <p class="hint">Minimum 10 characters. Must include uppercase, lowercase, and number(s).</p>
         </div>
 
         <div>
@@ -61,7 +63,7 @@
         </script>
 
         <div>
-          <div class="g-recaptcha" data-sitekey="REPLACE-WITH-SITE-KEY"></div>
+          <div class="g-recaptcha" data-sitekey="6LdJWKIrAAAAAH3hFuS7qsc2IU_jzjZVqfm3kD2_"></div>
         </div>
 
         <div>
