@@ -1,34 +1,25 @@
 <?php
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-  $email = filter_var($_POST['email'] ?? '', FILTER_SANITIZE_EMAIL);
-  $p1    = $_POST['password'] ?? '';
-  $p2    = $_POST['confirmPassword'] ?? '';
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $secret = "YOUR_V3_SECRET_KEY";
+    $token  = $_POST['g-recaptcha-response'] ?? '';
 
-  if ($p1 !== $p2) {
-    exit('Passwords do not match.');
-  }
+    // Minimal GET request, same style as your snippet
+    $resp = file_get_contents(
+        "https://www.google.com/recaptcha/api/siteverify?secret="
+        . urlencode($secret) . "&response=" . urlencode($token)
+    );
+    $data = json_decode($resp, true);
 
-  // reCAPTCHA response from Google
-  $token = $_POST['g-recaptcha-response'] ?? '';
-  $secret = '6Le4bKIrAAAAABR7a9xfs01j-DGiHdMnSNNYogtf';
+    // v3 requires score + action checks
+    $ok      = !empty($data['success']);
+    $action  = $data['action'] ?? '';
+    $score   = isset($data['score']) ? (float)$data['score'] : 0.0;
+    $passed  = $ok && $action === 'register' && $score >= 0.5; // adjust threshold as needed
 
-  $ch = curl_init();
-  curl_setopt($ch, CURLOPT_URL, "https://www.google.com/recaptcha/api/siteverify");
-  curl_setopt($ch, CURLOPT_POST, 1);
-  curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query([
-    'secret' => $secret,
-    'response' => $token
-  ]));
-  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-  $output = curl_exec($ch);
-  curl_close($ch);
-
-  $result = json_decode($output, true);
-
-  if ($result['success'] && $result['action'] === 'register' && $result['score'] >= 0.5) {
-    echo "Registration successful.";
-    // TODO: Save user to DB with hashed password
-  } else {
-    echo "Suspicious activity detected or verification failed.";
-  }
+    if ($passed) {
+        echo "Form Submit Successfully.";
+    } else {
+        echo "You are a robot";
+        // Optionally: var_dump($data); // to see 'error-codes', score, etc. during testing
+    }
 }
