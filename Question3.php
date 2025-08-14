@@ -19,11 +19,7 @@
           <input type="password" id="password" name="password">
         </div>
 
-        <div>
-          <label for="confirmPassword">Re-type Password:</label><br/>
-          <input type="password" id="confirmPassword" name="confirmPassword" oninput="checkPasswordsMatch()">
-        </div>
-
-      
-
-      <button type="submit">Login</button>
+    
+      <button type="submit">Signup
+        
+      </button>
