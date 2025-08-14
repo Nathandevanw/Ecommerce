@@ -1,4 +1,3 @@
-<!-- q3_verify_code.php -->
 <?php
 session_start();
 
