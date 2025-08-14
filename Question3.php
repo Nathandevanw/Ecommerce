@@ -1,7 +1,7 @@
+<!DOCTYPE html>
 <html>
   <head>
-    <title>Question 2</title>
-    <script src='https://www.google.com/recaptcha/api.js' async defer></script>
+    <title>Q3 -  Simple Multi-Factor Authentication </title>
     <link rel="stylesheet" href="style.css">
     <style>
       .error-message {
@@ -13,21 +13,19 @@
         margin-top: 5px;
       }
     </style>
-  </head>
+  </head>    
   <body>
-
     <div>
-      <h1><b>Create Account</b></h1>
-
-      <form action="process.php" method="post">
-        <div>
+    <h1 class="heading"><b>Login with Multi-Factor Authentication<b></h1>
+    <form action="Question3_Process.php" method="post">
+      <div>
           <label for="email">Email address:</label><br/>
           <input type="text" id="email" name="email">
         </div>
 
         <div>
           <label for="password">Password:</label><br/>
-          <input type="password" id="password" name="password" minlength="10" required>
+          <input type="password" id="password" name="password">
            <p class="hint"><str>Minimum 10 characters.<br> Must include uppercase, lowercase, and number(s).</str></p>
         </div>
 
@@ -62,15 +60,6 @@
           
         </script>
 
-        <div>
-          <div class="g-recaptcha" data-sitekey="6LdJWKIrAAAAAH3hFuS7qsc2IU_jzjZVqfm3kD2_"></div>
-        </div>
+      
 
-        <div>
-          <button type="submit" class="btn btn-primary">Create Account</button>
-        </div>
-      </form>
-    </div>
-
-  </body>
-</html>
+      <button type="submit">Login</button>
