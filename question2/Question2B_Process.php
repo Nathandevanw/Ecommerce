@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     /*
      * In v3, 'success' confirms the request is verified
-     * and 'score' (0.0 → 1.0) gives confidence level
+     * and 'score' (0.0 - 1.0) gives confidence level
      * > 0.5 = human, < 0.5 = suspicious
      */
     $ok      = !empty($data['success']);
